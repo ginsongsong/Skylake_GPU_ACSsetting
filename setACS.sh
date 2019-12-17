@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for y in ` lspci -vvv| grep "Root Port" | grep PCI |cut -c1-7 `;
+for y in ` lspci -vvv| grep "Root Port" | grep "Normal decode" | grep PCI |cut -c1-7 `;
 do
         cpu="0x0" #------- => cpu=0x0 , +++++-- => cpu=0x1f , +-+++-- => cpu=0x1d
         echo "CPU setACS : $cpu"
